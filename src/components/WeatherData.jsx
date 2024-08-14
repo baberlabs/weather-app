@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import apiKeys from "../../api-keys";
 import axios from "axios";
 
 import { Button } from "@mui/material";
@@ -22,7 +21,9 @@ export default function WeatherData({ location, setPage }) {
     setIsLoading(true);
     axios
       .get(
-        `http://api.weatherapi.com/v1/forecast.json?q=${location}&days=3&key=${apiKeys.weatherapi.baber}`
+        `http://api.weatherapi.com/v1/forecast.json?q=${location}&days=3&key=${
+          import.meta.env.VITE_API_KEY
+        }`
       )
       .then((response) => {
         setWeather(response.data);

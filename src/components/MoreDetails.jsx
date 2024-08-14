@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import apiKeys from "../../api-keys";
 import { Button } from "@mui/material";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 
@@ -46,7 +45,9 @@ export default function MoreDetails({ location, setPage }) {
   useEffect(() => {
     axios
       .get(
-        `http://api.weatherapi.com/v1/forecast.json?q=${location}&days=3&key=${apiKeys.weatherapi.baber}`
+        `http://api.weatherapi.com/v1/forecast.json?q=${location}&days=3&key=${
+          import.meta.env.VITE_API_KEY
+        }`
       )
       .then((response) => {
         setTodaysWeather(response.data.forecast.forecastday[0].hour);
