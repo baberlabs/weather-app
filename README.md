@@ -2,6 +2,10 @@
 
 A simple and intuitive weather application built with React that allows users to check current weather conditions and forecasts for any location.
 
+## Deployed Site
+
+Visit [weather-by-baberr.netlify.app](https://weather-by-baberr.netlify.app/)
+
 ## Features
 
 -   Search for weather information by location
